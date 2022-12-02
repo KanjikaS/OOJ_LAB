@@ -10,6 +10,10 @@ double b= sc.nextDouble();
 double c=sc.nextDouble();
 double d=(b*b)-(4*a*c);
 double r1,r2;
+ if(a==0){
+  System.out.println("invlaid quadratic expression");
+ }
+ else{
 if(d>0){
 System.out.println("The roots are real and distinct");
 r1=(-b+Math.sqrt(d))/(2*a);
@@ -29,5 +33,6 @@ r2=(Math.sqrt(-d))/(2*a);
 System.out.println("The first root is "+ r1+ "+i"+r2);
 System.out.println("The first root is "+ r1+ "-i"+r2);
 }
+ }
 }
 }
