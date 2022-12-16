@@ -34,8 +34,8 @@ System.out.println("Area of Triangle is " +area);
 
 
 class Circle extends shape{
- public Circle(int a,int b){
-super(a,b);
+ public Circle(int a){
+super(a,-1);
 }
 void PrintArea(){
 area=pi*Math.pow(a,2);
@@ -65,8 +65,8 @@ case 1: System.out.println("enter length and breadth");
         break;
 case 2: System.out.println("enter  radius");
        l=sc.nextInt();
-       b= sc.nextInt();
-       Circle c=new Circle(l,b);
+//        b= sc.nextInt();
+       Circle c=new Circle(l);
         // c.a= sc.nextInt();
         // c.b= sc.nextInt(c.a)
         c.PrintArea();
