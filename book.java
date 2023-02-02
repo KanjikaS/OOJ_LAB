@@ -1,52 +1,51 @@
 import java.util.*;
-class book{
-String name,author;
-int price,num_pages;
- void book(){
-Scanner sc=new Scanner(System.in);
-System.out.println("Enter book name");
-name=sc.nextLine();
-System.out.println("Enter author name");
-author=sc.nextLine();
-System.out.println("Enter price");
-price=sc.nextInt();
-System.out.println("Enter number of pages");
-num_pages=sc.nextInt();
+class Book{
+   String name,author;
+   double price;
+   int  num_pages;
+   Book(){
+      name="\0";
+      author="\0";
+      price=0.0;
+      num_pages=0;
+   }
+   void get() 
+   {
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the name of the book:");
+      this.name=sc.nextLine();
+      System.out.println("Enter the author's name:");
+      this.author=sc.nextLine();
+      System.out.println("Enter the price of the book:");
+      this.price=sc.nextDouble();
+      System.out.println("Enter the number of pages:");
+      this.num_pages=sc.nextInt();
+    }
+   public String toString()
+   {
+     String s="Name of the book: "+this.name+"\nAuthor of the book: "+this.author+"\nPrice: "+this.price+"\nNumber of pages: "+this.num_pages;
+     return s;
+   }
 }
-void get(){
-System.out.println("The details of the book are as follows");
-System.out.println("");
-System.out.println("Book-Name : " + name+"\n");
-System.out.println("Book-Author : " + author+"\n");
-System.out.println("Book-Price : " + price+"\n");
-System.out.println("Book-Pages: " + num_pages+"\n");
-System.out.println("");
-System.out.println("");
+class oojLabProg3
+{
+   public static void main(String args[])
+   {
+      int n;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number of books:");
+      n=sc.nextInt();
+      Book b1[]=new Book[n];
+      for(int i=0;i<n;i++)
+      {
+        b1[i]=new Book();
+        System.out.println("Enter book "+(i+1)+" details");
+        b1[i].get();
+       }
+       for(int i=0;i<n;i++)
+       {
+         System.out.println("Book "+(i+1)+" details");
+         System.out.println(b1[i]);
+       }
+   }
 }
-}
- 
-
-class week3{
-public static void main(String args[]){
-    Scanner sc= new Scanner(System.in);
- int n;
-System.out.println("Enter the number of books ");
-n=sc.nextInt();
-book b[]=new book[n];
-for(int i=0;i<n;i++){
-b[i]=new book();
-}
-for(int i=0;i<n;i++){
-b[i].book();
-// b[i].display();
-}
-for(int i=0;i<n;i++){
-
-b[i].get();
-}
-}
-}
-
-
-
-
