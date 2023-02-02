@@ -1,61 +1,95 @@
-import java.util.Scanner;
-class Father extends Exception{
-int fage;
-Father(int x)
+import java.util.*;
+class WrongAge extends Exception
 {
-fage=x;
+    int a;
+    String s;
+    WrongAge(int x)
+    {
+        a=x;
+    }
+    public String toString()
+    {
+        if(a<=0)
+        s="Invalid Age!";
+        return s;
+    }
 }
-public String toString(){
-return "Father's age is wrong";
-}
-}
-class Son extends Father{
-int sage;
-Son(int x,int y)
+class WrongSonAge extends Exception
 {
-super(x);
-sage=y;
+    int s_a,f_a;
+    String str;
+    WrongSonAge(int x, int y)
+    {
+        s_a=x;
+        f_a=y;
+    }
+    public String toString()
+    {
+        if(s_a>=f_a)
+         str= "Son's age cannot be more than or equal to father's age!";
+        return str;
+    }
 }
-public String toString(){
-return "Son's age is greater than or equal to father";
-}
-}
-class Wrong_age{
-static int x,y;
-static void Fatherage(int x) throws Father
+
+class Father
 {
-System.out.println("Called Fatherage("+x+")");
-if(x<0)
-throw new Father(x);
-System.out.println("Normal exit father's age is"+x);
+     Scanner sc=new Scanner(System.in);
+    int f_age;
+    Father() throws WrongAge 
+    {
+        System.out.println("Enter father's age:");
+	    f_age=sc.nextInt();
+        if(f_age<=0)
+         throw new WrongAge(f_age);
+    }
 }
-static void Sonage(int x,int y) throws Son
+
+class Son extends Father
 {
-System.out.println("Called Sonage("+y+")");
-if(y>=x)
-throw new Son(x,y);
-System.out.println("Normal exit son's age is"+y);
+     Scanner sc=new Scanner(System.in);
+    int son_age;
+    Son() throws WrongAge 
+    {
+        
+        System.out.println("Enter son's age:");
+	    son_age=sc.nextInt();
+    }
+    void check()throws WrongAge{
+        if(son_age<=0)
+    
+        throw new WrongAge(son_age);
+    }
+    void compare() throws WrongSonAge
+    {
+        if(son_age>=f_age)
+        throw new WrongSonAge(son_age,f_age);
+        else
+        {
+            System.out.println("Father's age: "+f_age);
+            System.out.println("Son's age: "+son_age);
+        }
+    }
 }
-public static void main(String args[])
+public class oojLabProg6
 {
-Scanner input=new Scanner(System.in);
-System.out.println("Enter father age");
-x=input.nextInt();
-System.out.println("Enter Son age");
-y=input.nextInt();
-try{
-Fatherage(x);
-}
-catch(Father e)
-{
-System.out.println(e);
-}
-try{
-Sonage(x,y);
-}
-catch(Son e)
-{
-System.out.println(e);
-}
-}
+	public static void main(String[] args) 
+	{
+	   
+	    Scanner sc=new Scanner(System.in);
+	   try
+	    {
+	        Son obj2=new Son();
+	        obj2.check();
+	        obj2.compare();
+	     }
+	     catch(WrongAge e)
+	     {
+	         System.out.println(e);
+	     }
+	     catch(WrongSonAge e)
+	     {
+	         System.out.println(e);
+	     }
+         sc.close();
+	}
 }
