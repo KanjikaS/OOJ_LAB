@@ -48,7 +48,7 @@ System.out.println("Area of is  Circle " +area);
 
 
 
-class weekyayy4{
+class abstract1{
 public static void main(String args[]){
 int choice;
 int l,b;
