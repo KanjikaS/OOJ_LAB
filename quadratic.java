@@ -1,6 +1,6 @@
 import java.util.*;
 
-class main{
+class quadratic{
 public static void main(String args[])
 {
  System.out.println("Enter the coefficeints of quadratic equation");
