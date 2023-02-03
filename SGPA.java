@@ -55,7 +55,7 @@ System.out.println("Your SGPA is " + SGPA);
 }
 
 
-class kanji{
+class SGPA{
     public static void main(String[] args) {
 int []credits= new int [10];
 int [] marks=new int[10];
@@ -66,11 +66,11 @@ int [] marks=new int[10];
           String b=sc.nextLine();
           Student s1= new Student();
           s1.accept(a,b);
-          System.out.println("enter the marks of following subject one by one \n 1.Maths\n 2.DBMS\n3.DST\n4.OOj\n5.LD");
+          System.out.println("enter the marks of following subject one by onen1.Maths\n 2.DBMS\n3.DST\n4.OOj\n5.LD");
          for(int i=0;i<5;i++){
              marks[i]=sc.nextInt();
          }
-         System.out.println("enter the credits of following subject one by one 1.Maths/n 2.DBMS\n3.DST\n4.OOj\n5.LD");
+         System.out.println("enter the credits of following subject one by one\n1.Maths\n 2.DBMS\n3.DST\n4.OOj\n5.LD");
          for(int i=0;i<5;i++){
              credits[i]=sc.nextInt();
          }
