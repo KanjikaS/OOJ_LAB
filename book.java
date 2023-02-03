@@ -27,7 +27,7 @@ class Book{
      return s;
    }
 }
-class oojLabProg3
+class book
 {
    public static void main(String args[])
    {
