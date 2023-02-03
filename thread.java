@@ -34,7 +34,7 @@ class Thread2 extends Thread
         }
     }
 }
-public class oojLabProg8
+public class thread
 {
     public static void main(String args[])
     {
