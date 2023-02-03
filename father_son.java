@@ -70,7 +70,7 @@ class Son extends Father
         }
     }
 }
-public class oojLabProg6
+public class father_son
 {
 	public static void main(String[] args) 
 	{
